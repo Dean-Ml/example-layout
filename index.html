@@ -1,0 +1,142 @@
+﻿<!doctype html>
+<html>
+<title>Zadanie</title>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='style.css'>
+<style>
+aside {
+    float:left;
+	width:30%;
+}
+section {
+	float:left;
+	width:70%;
+}
+footer > h1, footer > p {
+	line-height:1;
+	margin:0;
+}
+.mldean-dir {
+	direction:rtl;
+}
+.mldean-sidenav {
+	width:100% !important;
+}
+</style>
+<!-- mldean -->
+<body>
+	<!-- Navbar -->
+	<div class='mldean-top mldean-black'>
+		<a href='javascript.void(0)' class='mldean-bar-item mldean-button mldean-hide-medium mldean-hide-large mldean-opennav mldean-right mldean-hover-white mldean-blue-grey js-open'>&#9776;</a>
+		<a href='#' class='mldean-bar-item mldean-button mldean-blue-grey'>
+			<strong>Logo</strong>
+		</a>
+		<a href='#zespol' class='mldean-bar-item mldean-button mldean-hide-small mldean-hover-white'>Zespół</a>
+		<a href='#prace' class='mldean-bar-item mldean-button mldean-hide-small mldean-hover-white'>Prace</a>
+		<a href='#ceny' class='mldean-bar-item mldean-button mldean-hide-small mldean-hover-white'>Ceny</a>
+		<a href='#kontakt' class='mldean-bar-item mldean-button mldean-hide-small mldean-hover-white'>Kontakt</a>
+		<div class='mldean-hide-small mldean-dropdown-hover'>
+			<button class='mldean-button mldean-black' title='Powiadomienia'>
+				Dropdown <i class='fa fa-caret-down'></i>
+			</button>
+			<div class='mldean-dropdown-content mldean-white mldean-card-4'>
+				<a href='#'>Link 1</a>
+				<a href='#'>Link 2</a>
+				<a href='#'>Link 3</a>
+				<a href='#'>Link 4</a>
+			</div>
+		</div>
+		<a href='#' class='mldean-bar-item mldean-button mldean-hide-small mldean-right mldean-hover-blue-grey' title='Szukaj'>
+			<i class='fa fa-search'></i>
+		</a>
+	</div>
+	
+	<!-- Sidenav/menu -->
+	<nav class='mldean-sidenav mldean-black mldean-bar-block mldean-animate-left mldean-hide-medium mldean-hide-large mldean-hide js-sidenav' style='z-index:3;width:100%'>
+		<a href='#zespol' class='mldean-bar-item mldean-button mldean-padding-12'>Zespół</a>
+		<a href='#prace' class='mldean-bar-item mldean-button mldean-padding-12'>Prace</a>
+		<a href='#ceny' class='mldean-bar-item mldean-button mldean-padding-12'>Ceny</a>
+		<a href='#kontakt' class='mldean-bar-item mldean-button mldean-padding-12'>Kontakt</a>
+		<a href='#' class='mldean-bar-item mldean-button mldean-padding-12'>Szukaj</a>
+	</nav>
+
+	<!-- Header -->
+	<header class='mldean-display-container mldean-animate-opacity' style='margin-top:39px'>
+		<img src='images/sailboat.jpg' style='width:100%;min-height:350px;max-height:600px'>
+		<div class='mldean-container mldean-display-bottomright mldean-margin-bottom'>
+			<button class='mldean-button mldean-xlarge mldean-blue-grey mldean-hover-black js-dir'>LTR/RTL</button>
+		</div>
+	</header>
+	
+	<aside class='mldean-padding-xlarge mldean-mobile'>
+		<h3 class='mldean-padding-32'>Maecenas non tellus feugiat</h3>
+		<p>Maecenas non tellus feugiat, finibus elit luctus, feugiat quam. Suspendisse ultrices pretium dui ac commodo. Etiam finibus dolor quis cursus euismod. Vestibulum in elementum libero. Nulla a vehicula ante. Duis non nisl et leo vulputate imperdiet. Donec aliquam augue leo, ut fringilla mauris luctus a. Nam commodo, risus finibus mattis vestibulum, turpis arcu placerat nulla, semper eleifend nisi arcu et mi. Quisque purus purus, viverra quis tempus ac, laoreet et ligula. Proin tincidunt aliquam neque ac tristique. Phasellus porttitor egestas ex porttitor condimentum. In gravida tortor eu mauris blandit blandit. Nam ut cursus diam. Donec varius elit sit amet velit laoreet, eu imperdiet sapien condimentum. Curabitur purus tellus, feugiat sit amet sagittis eu, interdum eget turpis.</p>
+	</aside>
+	
+	<section class='mldean-padding-xlarge mldean-mobile'></section>
+	<div class="mldean-clear">&nbsp;</div>
+	
+	<footer class='mldean-container mldean-blue-grey mldean-padding-64'>
+		<h1>FOOTER</h1>
+		<p>All Rights Reserved &copy;</p>
+	</footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+	json();
+	$('a').on('click', function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+	});
+	
+	$('.js-dir').on('click', function() {
+		if($('section').hasClass('mldean-dir')) {
+			$('section, aside').removeClass('mldean-dir');
+		} else {
+			$('section, aside').addClass('mldean-dir');
+		}
+	});
+	
+	$('.js-open').on('click', function() {
+		if($('.js-sidenav').hasClass('mldean-hide')) {
+			$('.js-sidenav').removeClass('mldean-hide');
+		} else {
+			$('.js-sidenav').addClass('mldean-hide');
+		}
+	});
+	
+	$('section').on(
+		'click',
+		'.js-more',
+		function() {
+			if($(this).prev().hasClass('mldean-hide')) {
+				$(this).prev().removeClass('mldean-hide');
+				$(this).text('Mniej');
+			} else {
+				$(this).prev().addClass('mldean-hide');
+				$(this).text('Więcej');
+			}
+		}
+	);
+});
+
+var json = function () {
+	$.ajax({
+		dataType: 'text',
+		url: "content.json",
+		success: function (data) {
+			var jsonTemp = $.parseJSON(data);
+			$('section').append('<h1 class="mldean-padding-32">' +
+				jsonTemp.title +'</h1>');
+			$.each(jsonTemp.articles, function(key, field) {
+				$('section').append('<article><h3>' + field.title + '</h3><p>' +
+					field.content + '</p><p class="mldean-hide">' + field.more + '</p><button class="mldean-button mldean-tiny mldean-right js-more">Więcej</button><br></article>');
+			});
+		}
+	});
+};
+</script>
+</html>
